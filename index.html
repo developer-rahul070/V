@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VELORA LUXE | Luxury Shopping</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">
+    DISCOVER TIMELESS LUXURY — WELCOME TO VELORA LUXE
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <a href="#" class="logo">VELORA <span>LUXE</span></a>
+
+    <nav class="navbar" id="navbar">
+      <a href="#home">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#products">Shop</a>
+      <a href="#about">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button id="searchBtn" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
+
+      <button id="loginBtn" aria-label="Login">
+        <i class="far fa-user"></i>
+      </button>
+
+      <button id="cartBtn" aria-label="Shopping cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Search Bar -->
+  <section class="search-panel" id="searchPanel">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search watches, fashion, perfume..."
+    >
+    <button id="closeSearch" aria-label="Close search">
+      <i class="fas fa-times"></i>
+    </button>
+  </section>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <p class="eyebrow">THE ART OF ELEGANCE</p>
+
+        <h1>Luxury That<br><span>Defines You.</span></h1>
+
+        <p>
+          Discover exceptional watches, timeless fashion
+          and exquisite accessories, curated for your style.
+        </p>
+
+        <a href="#products" class="gold-btn">
+          EXPLORE COLLECTION <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="hero-image reveal">
+        <img
+          src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1100&q=85"
+          alt="Luxury wristwatch"
+        >
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories section" id="collections">
+      <div class="section-heading reveal">
+        <p class="eyebrow">CURATED FOR YOU</p>
+        <h2>Explore Our <span>Collections</span></h2>
+      </div>
+
+      <div class="category-grid">
+        <a href="#products" class="category-card reveal">
+          <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=600&q=80" alt="Luxury watch">
+          <span>Watches</span>
+        </a>
+
+        <a href="#products" class="category-card reveal">
+          <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=600&q=80" alt="Luxury fashion clothing">
+          <span>Fashion</span>
+        </a>
+
+        <a href="#products" class="category-card reveal">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80" alt="Luxury perfume">
+          <span>Perfumes</span>
+        </a>
+
+        <a href="#products" class="category-card reveal">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=600&q=80" alt="Designer handbag">
+          <span>Bags</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products section" id="products">
+      <div class="section-heading reveal">
+        <p class="eyebrow">THE SIGNATURE EDIT</p>
+        <h2>Featured <span>Products</span></h2>
+        <p>Discover pieces made to stand out.</p>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+
+        <article class="product-card reveal" data-category="watches">
+          <div class="product-image">
+            <span class="product-tag">BESTSELLER</span>
+            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=700&q=85" alt="Classic luxury watch">
+          </div>
+          <div class="product-info">
+            <p class="product-category">TIMEPIECES</p>
+            <h3>Classic Gold Watch</h3>
+            <p class="price">₹4,999</p>
+            <button class="add-cart" data-name="Classic Gold Watch" data-price="4999">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="bags">
+          <div class="product-image">
+            <span class="product-tag">NEW</span>
+            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=700&q=85" alt="Elegant designer bag">
+          </div>
+          <div class="product-info">
+            <p class="product-category">ACCESSORIES</p>
+            <h3>Signature Luxe Bag</h3>
+            <p class="price">₹3,499</p>
+            <button class="add-cart" data-name="Signature Luxe Bag" data-price="3499">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="perfumes">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=700&q=85" alt="Premium perfume bottle">
+          </div>
+          <div class="product-info">
+            <p class="product-category">FRAGRANCE</p>
+            <h3>Midnight Essence</h3>
+            <p class="price">₹1,999</p>
+            <button class="add-cart" data-name="Midnight Essence" data-price="1999">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+        <article class="product-card reveal" data-category="fashion">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=700&q=85" alt="Premium fashion T-shirt">
+          </div>
+          <div class="product-info">
+            <p class="product-category">FASHION</p>
+            <h3>Essential Black Tee</h3>
+            <p class="price">₹1,499</p>
+            <button class="add-cart" data-name="Essential Black Tee" data-price="1499">
+              ADD TO CART
+            </button>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="no-results" id="noResults" hidden>
+        No products found. Try another search.
+      </p>
+    </section>
+
+    <!-- Luxury Banner -->
+    <section class="luxury-banner reveal" id="about">
+      <div>
+        <p class="eyebrow">BEYOND ORDINARY</p>
+        <h2>Elegance Is An <span>Attitude.</span></h2>
+        <p>Every detail tells a story. Make yours unforgettable.</p>
+        <a href="#products" class="gold-btn">SHOP THE EDIT</a>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter section reveal">
+      <p class="eyebrow">THE VELORA EXPERIENCE</p>
+      <h2>Luxury, Delivered.</h2>
+      <p>Stay updated with new collections and exclusive offers.</p>
+
+      <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="gold-btn">SUBSCRIBE</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Login Modal -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <button class="modal-close" data-close="loginModal" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <p class="eyebrow">WELCOME TO VELORA</p>
+      <h2>Your Account</h2>
+
+      <form id="loginForm">
+        <label for="loginEmail">Email address</label>
+        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+
+        <button type="submit" class="gold-btn">LOGIN</button>
+      </form>
+
+      <p class="modal-note">Demo login only — real accounts require a secure backend.</p>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div class="modal" id="cartModal">
+    <div class="modal-content cart-content">
+      <button class="modal-close" data-close="cartModal" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <p class="eyebrow">YOUR SELECTION</p>
+      <h2>Shopping Bag</h2>
+
+      <div id="cartItems">
+        <p class="empty-cart">Your shopping bag is empty.</p>
+      </div>
+
+      <div class="cart-summary">
+        <span>Total</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+
+      <button id="clearCart" class="outline-btn">CLEAR BAG</button>
+      <button id="checkoutBtn" class="gold-btn">CONTINUE TO CHECKOUT</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <a href="#home" class="logo">VELORA <span>LUXE</span></a>
+    <p>Luxury in every detail. Elegance in every moment.</p>
+
+    <div class="social-links">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+    </div>
+
+    <p class="copyright">© 2026 VELORA LUXE. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

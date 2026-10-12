@@ -1,0 +1,1069 @@
+
+/* =====================================
+   VELORA LUXE - LUXURY SHOPPING WEBSITE
+   PART 2 : STYLE.CSS
+===================================== */
+
+/* 1. Google Font & Basic Setup */
+:root {
+  --bg: #080808;
+  --surface: #111111;
+  --surface-light: #191919;
+  --gold: #d6b36a;
+  --gold-light: #f3dfaa;
+  --white: #f8f5ef;
+  --muted: #aaa49a;
+  --border: rgba(214, 179, 106, 0.28);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+
+/* 2. Announcement Bar */
+.announcement {
+  background: var(--gold);
+  color: #090909;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* 3. Header */
+.header {
+  min-height: 82px;
+  padding: 16px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background: rgba(8, 8, 8, 0.97);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.navbar a {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #dedbd5;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--gold);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+.header-actions button,
+.menu-btn,
+#closeSearch {
+  background: transparent;
+  color: var(--white);
+  border: none;
+  font-size: 17px;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.header-actions button:hover,
+.menu-btn:hover {
+  color: var(--gold);
+}
+
+#cartCount {
+  position: absolute;
+  top: -11px;
+  right: -12px;
+  background: var(--gold);
+  color: #000;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 10px;
+  display: grid;
+  place-items: center;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* 4. Search Panel */
+.search-panel {
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 7%;
+  background: #141414;
+  border-bottom: 1px solid var(--border);
+}
+
+.search-panel.active {
+  display: flex;
+  animation: dropIn 0.3s ease;
+}
+
+.search-panel input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gold);
+  color: white;
+  padding: 12px 4px;
+  outline: none;
+}
+
+.search-panel input::placeholder {
+  color: var(--muted);
+}
+
+#closeSearch {
+  padding: 8px;
+}
+
+/* 5. Common Sections */
+.section {
+  padding: 95px 7%;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.section-heading h2,
+.newsletter h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(32px, 4vw, 49px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.section-heading h2 span,
+.luxury-banner h2 span {
+  color: var(--gold);
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* 6. Gold Buttons */
+.gold-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 24px;
+  background: linear-gradient(135deg, #f0d79b, #bd9347);
+  color: #100d07;
+  border: 1px solid var(--gold);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gold-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(214, 179, 106, 0.2);
+}
+
+/* 7. Hero Section */
+.hero {
+  min-height: 570px;
+  padding: 65px 7%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+  background:
+    radial-gradient(
+      ellipse at 80% 50%,
+      rgba(214, 179, 106, 0.09),
+      transparent 55%
+    ),
+    var(--bg);
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-content h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 1.03;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero-content > p:not(.eyebrow) {
+  max-width: 420px;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.32),
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.hero-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.05);
+}
+
+/* 8. Category Cards */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.category-card {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.category-card img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s;
+  filter: brightness(0.72);
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+.category-card span {
+  position: absolute;
+  z-index: 2;
+  bottom: 22px;
+  left: 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  color: var(--white);
+}
+
+.category-card:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.95);
+}
+
+/* 9. Product Grid */
+.products {
+  background: #0d0d0d;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.product-card {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: transform 0.35s, border-color 0.35s;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--gold);
+}
+
+.product-image {
+  height: 290px;
+  position: relative;
+  overflow: hidden;
+  background: #202020;
+}
+
+.product-image img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+.product-tag {
+  position: absolute;
+  top: 13px;
+  left: 12px;
+  z-index: 2;
+  padding: 5px 9px;
+  background: var(--gold);
+  color: #000;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.product-info {
+  padding: 19px 15px 17px;
+}
+
+.product-category {
+  color: var(--gold);
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-bottom: 7px;
+}
+
+.product-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.price {
+  color: var(--gold-light);
+  font-size: 14px;
+  margin: 10px 0 16px;
+}
+
+.add-cart {
+  width: 100%;
+  padding: 11px 8px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+}
+
+.add-cart:hover {
+  background: var(--gold);
+  color: #080808;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--muted);
+  padding: 35px 10px;
+}
+
+/* 10. Luxury Banner */
+.luxury-banner {
+  margin: 70px 7%;
+  min-height: 360px;
+  padding: 65px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.97),
+      rgba(0, 0, 0, 0.68)
+    ),
+    url("https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=1600&q=85")
+    center/cover no-repeat;
+  border: 1px solid var(--border);
+}
+
+.luxury-banner h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(34px, 5vw, 57px);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+
+.luxury-banner p:not(.eyebrow) {
+  color: #c3bfb6;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+/* 11. Newsletter */
+.newsletter {
+  text-align: center;
+  background: #11100d;
+}
+
+.newsletter > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 15px 0 27px;
+}
+
+.newsletter form {
+  max-width: 510px;
+  display: flex;
+  gap: 10px;
+  margin: auto;
+}
+
+.newsletter input {
+  flex: 1;
+  min-width: 0;
+  background: #080808;
+  border: 1px solid var(--border);
+  padding: 13px 15px;
+  color: white;
+  font-size: 12px;
+}
+
+.newsletter .gold-btn {
+  white-space: nowrap;
+}
+
+/* 12. Login & Cart Modals */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(7px);
+}
+
+.modal.active {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 430px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 38px;
+  background: #111;
+  border: 1px solid var(--gold);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+  animation: modalUp 0.3s ease;
+}
+
+.modal-content h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 37px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  border: none;
+  background: transparent;
+  color: var(--white);
+  font-size: 19px;
+}
+
+.modal-close:hover {
+  color: var(--gold);
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+#loginForm label {
+  font-size: 11px;
+  color: #ddd;
+}
+
+#loginForm input {
+  padding: 13px;
+  background: #080808;
+  color: white;
+  border: 1px solid #38342a;
+  margin-bottom: 9px;
+}
+
+#loginForm .gold-btn {
+  width: 100%;
+  margin-top: 9px;
+}
+
+.modal-note {
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* 13. Shopping Cart */
+.cart-content {
+  max-width: 540px;
+}
+
+#cartItems {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-cart {
+  text-align: center;
+  color: var(--muted);
+  padding: 25px 0;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-item h3 {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.cart-item p {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.cart-item button {
+  border: 1px solid var(--border);
+  padding: 5px 9px;
+  background: transparent;
+  color: var(--white);
+  font-size: 11px;
+}
+
+.cart-item button:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--gold);
+  font-size: 14px;
+}
+
+.cart-summary strong {
+  color: var(--gold);
+}
+
+.cart-content > .gold-btn,
+.cart-content > .outline-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.outline-btn {
+  padding: 12px;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--border);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.outline-btn:hover {
+  border-color: var(--gold);
+}
+
+/* 14. Footer */
+.footer {
+  padding: 60px 7% 25px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  background: #060606;
+}
+
+.footer > p {
+  margin-top: 13px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 25px 0;
+}
+
+.social-links a {
+  color: var(--gold);
+  transition: transform 0.3s;
+}
+
+.social-links a:hover {
+  transform: translateY(-4px);
+}
+
+.footer .copyright {
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 10px;
+}
+
+/* 15. Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 16. Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 17. Tablet Responsive */
+@media (max-width: 1024px) {
+  .header {
+    padding: 15px 4%;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  .navbar {
+    gap: 14px;
+  }
+
+  .navbar a {
+    font-size: 10px;
+  }
+
+  .header-actions {
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 55px 5%;
+    gap: 30px;
+  }
+
+  .section {
+    padding: 75px 5%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-card {
+    height: 350px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .product-image {
+    height: 330px;
+  }
+}
+
+/* 18. Mobile Responsive */
+@media (max-width: 700px) {
+  .announcement {
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 8px 5px;
+  }
+
+  .header {
+    min-height: 70px;
+    padding: 12px 5%;
+    gap: 12px;
+  }
+
+  .menu-btn {
+    display: block;
+    font-size: 18px;
+  }
+
+  .logo {
+    font-size: 23px;
+    letter-spacing: 1.5px;
+  }
+
+  .header-actions {
+    gap: 14px;
+  }
+
+  .header-actions button {
+    font-size: 15px;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 5% 20px;
+    background: #0c0c0c;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .navbar.active {
+    display: flex;
+    animation: dropIn 0.25s ease;
+  }
+
+  .navbar a {
+    padding: 13px 0;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 55px 5%;
+  }
+
+  .hero-content {
+    text-align: center;
+    margin: auto;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(45px, 12vw, 64px);
+  }
+
+  .hero-content > p:not(.eyebrow) {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+  }
+
+  .hero-image {
+    height: 340px;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .section-heading h2,
+  .newsletter h2 {
+    font-size: 36px;
+  }
+
+  .category-grid {
+    gap: 12px;
+  }
+
+  .category-card {
+    height: 230px;
+  }
+
+  .category-card span {
+    left: 12px;
+    bottom: 12px;
+    font-size: 23px;
+  }
+
+  .product-grid {
+    gap: 12px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .product-info {
+    padding: 13px 10px;
+  }
+
+  .product-info h3 {
+    font-size: 19px;
+  }
+
+  .product-category {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .add-cart {
+    font-size: 8px;
+    padding: 10px 5px;
+    letter-spacing: 1px;
+  }
+
+  .luxury-banner {
+    margin: 35px 5%;
+    min-height: 300px;
+    padding: 35px 7%;
+  }
+
+  .luxury-banner h2 {
+    font-size: 38px;
+  }
+
+  .newsletter form {
+    flex-direction: column;
+  }
+
+  .newsletter form .gold-btn {
+    width: 100%;
+  }
+
+  .modal {
+    padding: 12px;
+  }
+
+  .modal-content {
+    padding: 32px 22px;
+  }
+
+  .footer {
+    padding: 45px 5% 22px;
+  }
+}
+
+/* 19. Small Phones */
+@media (max-width: 380px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .header-actions button {
+    font-size: 14px;
+  }
+
+  .hero-image {
+    height: 280px;
+  }
+
+  .category-card {
+    height: 190px;
+  }
+
+  .product-image {
+    height: 175px;
+  }
+
+  .product-info h3 {
+    font-size: 17px;
+  }
+
+  .product-info {
+    padding: 11px 8px;
+  }
+
+  .gold-btn {
+    padding: 12px 15px;
+    font-size: 9px;
+  }
+}
+
+/* 20. Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
